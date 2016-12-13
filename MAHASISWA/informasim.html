@@ -9,9 +9,9 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>TAS - Sistem Penjadwalan Otomatis</title>
+    <title>TAS</title>
 
-	<link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
     <link href="../css/sb-admin.css" rel="stylesheet">
     <link href="../css/plugins/morris.css" rel="stylesheet">
     <link href="../font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -20,28 +20,29 @@
     <script src='../moment.min.js'></script>
     <script src='../jquery.min.js'></script>
     <script src='../fullcalendar.min.js'></script>
-    <script src='../moment/locale/id.js'></script>
+    <script src='../id.js'></script>
   <script>
 
     $(document).ready(function() {
         
         $('#calendar').fullCalendar({
-            contentHeight:"auto",
+            height : 800,
+            contentHeight: "auto",
             header: {
-                left: 'prev,next',
+                left: 'prev, next',
                 center: 'title',
                 right: 'month,agendaDay,listMonth'
             },
             defaultDate: '2016-09-12',
             navLinks: true, // can click day/week names to navigate views
-            editable: false,
-            eventLimit: false, // allow "more" link when too many events
+            editable: true,
+            eventLimit: true, // allow "more" link when too many events
             hiddenDays: [0, 6],
 
             events: [
                 {
                     title: 'Dharma Kurnia Septialoka',
-                    start: '2016-09-05T08:00'
+                    start: '2016-09-03T08:00'
                 },
                 {
                     title: 'Catherine Pricilla',
@@ -78,7 +79,7 @@
                 },
                 {
                     title: 'Taufic Leonardo',
-                    start: '2016-09-15T14:00:00'
+                    start: '2016-09-22T14:00:00'
                 },
                 {
                     title: 'Johan Sentosa',
@@ -86,18 +87,18 @@
                 },
                 {
                     title: 'Jason Jeremy',
-                    start: '2016-09-14T14:00:00'
+                    start: '2016-09-21T14:00:00'
                 },
                 {
                     title: 'Kevin Supendi',
-                    start: '2016-09-14T07:00:00'
+                    start: '2016-09-21T07:00:00'
                 }
 
             ],
                     eventClick: function(event) {
         if (event.url) {
-            location.href = event.url;
-            return false;}
+            window.open(event.url);
+                return false;}
         }
 
         });
@@ -189,7 +190,7 @@
             </div>
             <!-- Top Menu Items -->
             <ul class="nav navbar-right top-nav">
-                  <li>
+                  <li  class="active">
                                 <form style="margin-top:15px; margin-right:10px" action="searchm.html" class="search-form">
                                     <div class="form-group has-feedback">
                                         <label style="margin-top:-7px; color:#222222;" for="search" class="sr-only">Search</label>
@@ -205,7 +206,7 @@
                             <a href="#">
                                 <div class="media">
                                     <div class="media-body">
-                                        <p class="small text-muted"><i class="fa fa-clock-o"></i> Senin, 26 September 2016</p>
+                                        <p class="small text-muted"><i class="fa fa-clock-o"></i> Monday, 26th September 2016</p>
                                         <p>Thesis defense will be held in <b>3 days</b>!</p>
                                     </div>
                                 </div>
@@ -227,7 +228,6 @@
                                     <div class="media-body">
                                         <p class="small text-muted"><i class="fa fa-clock-o"></i> Thursday, 22nd September 2016</p>
                                         <p>Thesis defense will be held in <b>1 week</b>!</p>
-                                    </div>
                                 </div>
                             </a>
                         </li>
@@ -261,22 +261,70 @@
             <!-- /.navbar-collapse -->
         </nav>
 
-        <div style ="height:1000;" id="page-wrapper">
+        <div id="page-wrapper">
 
-            <div  class="container-fluid">
+            <div class="container-fluid">
 
                 <!-- Page Heading -->
                 <div class="row">
                     <div class="col-lg-12">
                         <h1 class="page-header" style="text-align:center">
-                            Final Project Schedule
+                            Final Project Information
                         </h1>
                     </div>
                 </div>
                 <!-- /.row -->
 
                 <div class="row">
-                    <div id='calendar'></div>
+                    <table style="font-size:18px">
+                        <tr>
+                            <td>
+                                Name
+                            </td>
+                            <td>
+                                :  Catherine Pricilla
+                            </td>
+                        </tr>
+                                            <tr>
+                            <td>
+                                Location
+                            </td>
+                            <td>
+                                :  7603
+                            </td>
+                        </tr>
+                                                                    <tr>
+                            <td>
+                                Time
+                            </td>
+                            <td>
+                                :  10:00
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Topic
+                            </td>
+                            <td>
+                                :  Human and Computer Interaction
+                            </td>
+                        </tr>
+                       
+                        </table>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
                 </div>
                 <!-- /.row -->
 
@@ -292,12 +340,12 @@
 
 
     <!-- Bootstrap Core JavaScript -->
-    <script src="../js/bootstrap.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
 
     <!-- Morris Charts JavaScript -->
-    <script src="../js/plugins/morris/raphael.min.js"></script>
-    <script src="../js/plugins/morris/morris.min.js"></script>
-    <script src="../js/plugins/morris/morris-data.js"></script>
+    <script src="js/plugins/morris/raphael.min.js"></script>
+    <script src="js/plugins/morris/morris.min.js"></script>
+    <script src="js/plugins/morris/morris-data.js"></script>
 
 </body>
 

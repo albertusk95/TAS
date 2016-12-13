@@ -9,9 +9,9 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>TAS - Sistem Penjadwalan Otomatis</title>
+    <title>TAS</title>
 
-	<link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
     <link href="../css/sb-admin.css" rel="stylesheet">
     <link href="../css/plugins/morris.css" rel="stylesheet">
     <link href="../font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -26,13 +26,14 @@
     $(document).ready(function() {
         
         $('#calendar').fullCalendar({
-            contentHeight:"auto",
+            height : 800,
+            contentHeight: "auto",
             header: {
-                left: 'prev,next',
+                left: 'prev, next',
                 center: 'title',
                 right: 'month,agendaDay,listMonth'
             },
-            defaultDate: '2016-09-12',
+            defaultDate: '2016-09-07',
             navLinks: true, // can click day/week names to navigate views
             editable: false,
             eventLimit: false, // allow "more" link when too many events
@@ -40,66 +41,16 @@
 
             events: [
                 {
-                    title: 'Dharma Kurnia Septialoka',
-                    start: '2016-09-05T08:00'
-                },
-                {
                     title: 'Catherine Pricilla',
                     start: '2016-09-07T10:00',
                     url: 'informasim.html'
-                },
-                {
-                    title: 'Naufal Malik',
-                    start: '2016-09-09T16:00:00'
-                },
-                {
-                    title: 'Scarletta Julia',
-                    start: '2016-09-16T16:00:00'
-                },
-                {
-                    title: 'Albertus Kelvin',
-                    start: '2016-09-12T:09:00',
-                },
-                {
-                    title: 'Raihan Maulana',
-                    start: '2016-09-12T10:30:00',
-                },
-                {
-                    title: 'Chalvin Polpan',
-                    start: '2016-09-12T12:00:00'
-                },
-                {
-                    title: 'Evita Chandra',
-                    start: '2016-08-31T14:30:00'
-                },
-                {
-                    title: 'Friska Nataniel',
-                    start: '2016-09-12T17:30:00'
-                },
-                {
-                    title: 'Taufic Leonardo',
-                    start: '2016-09-15T14:00:00'
-                },
-                {
-                    title: 'Johan Sentosa',
-                    start: '2016-09-13T07:00:00'
-                },
-                {
-                    title: 'Jason Jeremy',
-                    start: '2016-09-14T14:00:00'
-                },
-                {
-                    title: 'Kevin Supendi',
-                    start: '2016-09-14T07:00:00'
                 }
-
             ],
                     eventClick: function(event) {
         if (event.url) {
             location.href = event.url;
             return false;}
         }
-
         });
         
     });
@@ -190,7 +141,7 @@
             <!-- Top Menu Items -->
             <ul class="nav navbar-right top-nav">
                   <li>
-                                <form style="margin-top:15px; margin-right:10px" action="searchm.html" class="search-form">
+                                <form style="margin-top:15px; margin-right:10px" action="search.html" class="search-form">
                                     <div class="form-group has-feedback">
                                         <label style="margin-top:-7px; color:#222222;" for="search" class="sr-only">Search</label>
                                         <input style="margin-top:-7px; color:#222222;" type="text" class="form-control" name="search" id="search" placeholder="search">
@@ -253,17 +204,18 @@
             <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav side-nav">
-                    <li class="active">
-                        <a href="jadwalm.html"></i>Final Project Schedule</a>
+                    <li  class="active">
+                        <a href="jadwalm.html"></i> Final Project Schedule</a>
                     </li>
+
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
         </nav>
 
-        <div style ="height:1000;" id="page-wrapper">
+        <div id="page-wrapper">
 
-            <div  class="container-fluid">
+            <div class="container-fluid">
 
                 <!-- Page Heading -->
                 <div class="row">
@@ -274,7 +226,13 @@
                     </div>
                 </div>
                 <!-- /.row -->
-
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h3 style="margin-left:3.7cm">
+                            Search Results: catherine
+                        </h3>
+                    </div>
+                </div>
                 <div class="row">
                     <div id='calendar'></div>
                 </div>
@@ -292,12 +250,12 @@
 
 
     <!-- Bootstrap Core JavaScript -->
-    <script src="../js/bootstrap.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
 
     <!-- Morris Charts JavaScript -->
-    <script src="../js/plugins/morris/raphael.min.js"></script>
-    <script src="../js/plugins/morris/morris.min.js"></script>
-    <script src="../js/plugins/morris/morris-data.js"></script>
+    <script src="js/plugins/morris/raphael.min.js"></script>
+    <script src="js/plugins/morris/morris.min.js"></script>
+    <script src="js/plugins/morris/morris-data.js"></script>
 
 </body>
 
