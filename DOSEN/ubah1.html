@@ -20,8 +20,74 @@
     <script src='../moment.min.js'></script>
     <script src='../jquery.min.js'></script>
     <script src='../fullcalendar.min.js'></script>
-	<script src='../moment/locale/id.js'></script>
-  
+    <script src='../moment/locale/id.js'></script>
+  <script>
+
+    $(document).ready(function() {
+        
+        $('#calendar').fullCalendar({
+            contentHeight:"auto",
+            header: {
+                left: 'prev,next',
+                center: 'title',
+                right: 'month,agendaDay,listMonth'
+            },
+            defaultDate: '2016-09-12',
+            navLinks: true, // can click day/week names to navigate views
+            editable: true,
+            eventLimit: false, // allow "more" link when too many events
+            hiddenDays: [0, 6],
+
+            events: [
+                {
+                    title: 'Dharma Kurnia Septialoka',
+                    start: '2016-09-05T08:00'
+                },
+                {
+                    title: 'Catherine Pricilla',
+                    start: '2016-09-07T10:00'
+                },
+                {
+                    title: 'Naufal Malik',
+                    start: '2016-09-09T16:00:00'
+                },
+                {
+                    title: 'Scarletta Julia',
+                    start: '2016-09-16T16:00:00'
+                },
+                {
+                    title: 'Albertus Kelvin',
+                    start: '2016-09-12T:09:00',
+                },
+                {
+                    title: 'Raihan Maulana',
+                    start: '2016-09-12T10:30:00',
+                },
+                {
+                    title: 'Chalvin Polpan',
+                    start: '2016-09-12T12:00:00'
+                },
+                {
+                    title: 'Evita Chandra',
+                    start: '2016-08-31T14:30:00'
+                },
+                {
+                    title: 'Jason Jeremy',
+                    start: '2016-09-14T14:00:00'
+                }
+            ],
+                                eventClick: function(event) {
+        if (event.url) {
+            location.href = event.url;
+            return false;}
+        }
+        });
+        
+    });
+
+</script>
+
+
     <style>
         #calendar {
             max-width:700px;
@@ -100,7 +166,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-<a class="navbar-brand" href="Jadwal1.html"><img style="margin-top:-10px; margin-left:-8px;" src="logo.png" alt="" /></a>
+<a class="navbar-brand" href="Jadwal1.html"><img style="margin-top:-10px; margin-left:-8px;" src="../logo.png" alt="" /></a>
             </div>
             <!-- Top Menu Items -->
             <ul class="nav navbar-right top-nav">
@@ -121,7 +187,7 @@
                                 <div class="media">
                                     <div class="media-body">
                                         <p class="small text-muted"><i class="fa fa-clock-o"></i> Senin, 26 September 2016</p>
-                                        <p>Sidang akan dilaksanakan <b>3 hari</b> lagi!</p>
+                                          <p><b>Catherine Pricilla</b>'s thesis defense will be held in <b>3 days</b>.</p>
                                     </div>
                                 </div>
                             </a>
@@ -130,8 +196,8 @@
                             <a href="#">
                                 <div class="media">
                                     <div class="media-body">
-                                        <p class="small text-muted"><i class="fa fa-clock-o"></i> Sabtu, 24 September 2016</p>
-                                        <p>Sidang akan dilaksanakan <b>5 hari</b> lagi!</p>
+                                        <p class="small text-muted"><i class="fa fa-clock-o"></i> Saturday, 24th September 2016</p>
+                                        <p><b>Raihan Maulana</b>'s thesis defense will be held in <b>5 days</b>.</p>
                                     </div>
                                 </div>
                             </a>
@@ -140,8 +206,8 @@
                             <a href="#">
                                 <div class="media">
                                     <div class="media-body">
-                                        <p class="small text-muted"><i class="fa fa-clock-o"></i> Minggu, 23 September 2016</p>
-                                        <p>Sidang akan dilaksanakan <b>7 hari</b> lagi!</p>
+                                        <p class="small text-muted"><i class="fa fa-clock-o"></i> Thursday, 22nd September 2016</p>
+                                        <p><b>Albertus Kevin</b>'s thesis defense will be held in <b>1 week</b>.</p>
                                     </div>
                                 </div>
                             </a>
@@ -153,7 +219,7 @@
                 </li>
 
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> Masayu Leila <b class="caret"></b></a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> Tim TU <b class="caret"></b></a>
                     <ul class="dropdown-menu">
                         <li>
                             <a href="#"><i class="fa fa-fw fa-gear"></i> Settings</a>
@@ -168,31 +234,44 @@
             <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav side-nav">
-                    <li >
-                        <a href="javascript:;" data-toggle="collapse" data-target="#demo"></i> Jadwal Sidang <i class="fa fa-fw fa-caret-down"></i></a>
-                        <ul id="demo" class="collapse">
+                    <li>
+                        <a href="Jadwal1.html"></i>Final Project Schedule</i></a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" data-toggle="collapse" data-target="#student-registration"></i> Student Registration <i class="fa fa-fw fa-caret-down"></i></a>
+                        <ul id="student-registration" class="collapse">
                             <li>
-                                <a href="Jadwal1.html">Sidang Keseluruhan</a>
+                                <a href="indexmahasiswadaftar.html">Add Student</a>
                             </li>
                             <li>
-                                <a href="Jadwal2.html">Sidang Saya</a>
-                            </li>
-                            <li>
-                                <a href="Jadwal3.html">Sidang Bimbingan</a>
-                            </li>
-                            <li>
-                                <a href="Jadwal4.html">Sidang Pengujian</a>
+                                <a href="indexmahasiswaform.html">View Students</a>
                             </li>
                         </ul>
                     </li>
+                    
                     <li>
-                        <a href="inputschedulecalendar.html"></i> Input Jadwal</a>
-                    </li>
-                    <li>
-                        <a href="ganti_dosen_uji.html"></i> Penggantian Dosen Penguji</a>
+                        <a href="javascript:;" data-toggle="collapse" data-target="#available-schedule"></i> Available Schedule <i class="fa fa-fw fa-caret-down"></i></a>
+                        <ul id="available-schedule" class="collapse">
+                            <li>
+                                <a href="inputschedulecalendar.html">Input Your Schedule</a>
+                            </li>
+                            <li>
+                                <a href="inputscheduleview.html">View Your Schedule</a>
+                            </li>
+                        </ul>
                     </li>
                     <li  class="active">
-                        <a href="ubah1.html"></i> Penggantian Jadwal</a>
+                        <a href="ubah1.html"></i> Schedule Setting</a>
+                    </li>
+                    <!-- <li>
+                        <a href="inputschedulecalendar.html"></i> Input Your Schedule</a>
+                    </li> -->
+                    
+                   <!--  <li>
+                        <a href="ubah_ruang.html"></i> Change Exam's Room</a>
+                    </li> -->
+                    <li>
+                        <a href="ganti_dosen_uji.html"></i> Change Examiner</a>
                     </li>
                 </ul>
             </div>
@@ -207,7 +286,7 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <h1 class="page-header" style="text-align:center">
-                            Edit Jadwal Sidang Tugas Akhir Saya
+                            Edit My Final Project Schedule
                         </h1>
                     </div>
                 </div>
@@ -216,7 +295,7 @@
                 <div class="row">
                     <div id='calendar'></div>
                     <br>
-                    <button type="button" id="save_ubah_jdwl_ruangan" class="btn btn-success" style="margin-left: 760px">Simpan</button>
+                    <button type="button" id="save_ubah_jdwl_ruangan" class="btn btn-success" style="margin-left: 760px">Save</button>
                 </div>
                 <!-- /.row -->
 
@@ -239,91 +318,6 @@
     <script src="../js/plugins/morris/morris.min.js"></script>
     <script src="../js/plugins/morris/morris-data.js"></script>
 
-	
-	<script>
-
-    $(document).ready(function() {
-        
-        $("#save_ubah_jdwl_ruangan").click(function() {
-            
-                alert("Saved");
-            
-            });
-
-        $('#calendar').fullCalendar({
-            height : 800,
-            contentHeight: "auto",
-            header: {
-                left: 'prev, next',
-                center: 'title',
-                right: 'month,agendaDay,listMonth'
-            },
-            defaultDate: '2016-09-12',
-            navLinks: true, // can click day/week names to navigate views
-            editable: true,
-            eventLimit: true, // allow "more" link when too many events
-            hiddenDays: [0, 6],
-
-            events: [
-                {
-                    title: 'Dharma Kurnia Septialoka',
-                    start: '2016-09-03T08:00'
-                },
-                {
-                    title: 'Catherine Pricilla',
-                    start: '2016-09-07T10:00'
-                },
-                {
-                    title: 'Naufal Malik',
-                    start: '2016-09-09T16:00:00'
-                },
-                {
-                    title: 'Scarletta Julia',
-                    start: '2016-09-16T16:00:00'
-                },
-                {
-                    title: 'Albertus Kelvin',
-                    start: '2016-09-12T:09:00',
-                },
-                {
-                    title: 'Raihan Maulana',
-                    start: '2016-09-12T10:30:00',
-                },
-                {
-                    title: 'Chalvin Polpan',
-                    start: '2016-09-12T12:00:00'
-                },
-                {
-                    title: 'Evita Chandra',
-                    start: '2016-08-31T14:30:00'
-                },
-                {
-                    title: 'Friska Nataniel',
-                    start: '2016-09-12T17:30:00'
-                },
-                {
-                    title: 'Taufic Leonardo',
-                    start: '2016-09-22T14:00:00'
-                },
-                {
-                    title: 'Johan Sentosa',
-                    start: '2016-09-13T07:00:00'
-                },
-                {
-                    title: 'Jason Jeremy',
-                    start: '2016-09-21T14:00:00'
-                },
-                {
-                    title: 'Kevin Supendi',
-                    start: '2016-09-21T07:00:00'
-                }
-            ]
-        });
-        
-    });
-
-</script>
-	
 </body>
 
 </html>

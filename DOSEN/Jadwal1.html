@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>TAS - Sistem Penjadwalan Otomatis</title>
+    <title>TAS</title>
 
     <link href="../css/bootstrap.min.css" rel="stylesheet">
     <link href="../css/sb-admin.css" rel="stylesheet">
@@ -26,23 +26,22 @@
     $(document).ready(function() {
         
         $('#calendar').fullCalendar({
-            height : 800,
-            contentHeight: "auto",
+            contentHeight:"auto",
             header: {
-                left: 'prev, next',
+                left: 'prev,next',
                 center: 'title',
                 right: 'month,agendaDay,listMonth'
             },
             defaultDate: '2016-09-12',
             navLinks: true, // can click day/week names to navigate views
-            editable: true,
-            eventLimit: true, // allow "more" link when too many events
+            editable: false,
+            eventLimit: false, // allow "more" link when too many events
             hiddenDays: [0, 6],
 
             events: [
                 {
                     title: 'Dharma Kurnia Septialoka',
-                    start: '2016-09-03T08:00'
+                    start: '2016-09-05T08:00'
                 },
                 {
                     title: 'Catherine Pricilla',
@@ -79,7 +78,7 @@
                 },
                 {
                     title: 'Taufic Leonardo',
-                    start: '2016-09-22T14:00:00'
+                    start: '2016-09-15T14:00:00'
                 },
                 {
                     title: 'Johan Sentosa',
@@ -87,19 +86,20 @@
                 },
                 {
                     title: 'Jason Jeremy',
-                    start: '2016-09-21T14:00:00'
+                    start: '2016-09-14T14:00:00'
                 },
                 {
                     title: 'Kevin Supendi',
-                    start: '2016-09-21T07:00:00'
+                    start: '2016-09-14T07:00:00'
                 }
+
             ],
-        eventClick: function(event) {
+                    eventClick: function(event) {
         if (event.url) {
-            window.open(event.url);
-            return false;
+            location.href = event.url;
+            return false;}
         }
-    }
+
         });
         
     });
@@ -206,7 +206,7 @@
                                 <div class="media">
                                     <div class="media-body">
                                         <p class="small text-muted"><i class="fa fa-clock-o"></i> Senin, 26 September 2016</p>
-                                        <p>Sidang akan dilaksanakan <b>3 hari</b> lagi!</p>
+                                        <p><b>Catherine Pricilla</b>'s thesis defense will be held in <b>3 days</b>.</p>
                                     </div>
                                 </div>
                             </a>
@@ -215,8 +215,8 @@
                             <a href="#">
                                 <div class="media">
                                     <div class="media-body">
-                                        <p class="small text-muted"><i class="fa fa-clock-o"></i> Sabtu, 24 September 2016</p>
-                                        <p>Sidang akan dilaksanakan <b>5 hari</b> lagi!</p>
+                                        <p class="small text-muted"><i class="fa fa-clock-o"></i> Saturday, 24th September 2016</p>
+                                        <p><b>Raihan Maulana</b>'s thesis defense will be held in <b>5 days</b>.</p>
                                     </div>
                                 </div>
                             </a>
@@ -225,8 +225,8 @@
                             <a href="#">
                                 <div class="media">
                                     <div class="media-body">
-                                        <p class="small text-muted"><i class="fa fa-clock-o"></i> Minggu, 23 September 2016</p>
-                                        <p>Sidang akan dilaksanakan <b>7 hari</b> lagi!</p>
+                                        <p class="small text-muted"><i class="fa fa-clock-o"></i> Thursday, 22nd September 2016</p>
+                                        <p><b>Albertus Kevin</b>'s thesis defense will be held in <b>1 week</b>.</p>
                                     </div>
                                 </div>
                             </a>
@@ -238,7 +238,7 @@
                 </li>
 
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> Masayu Leila <b class="caret"></b></a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> Massayu Leila <b class="caret"></b></a>
                     <ul class="dropdown-menu">
                         <li>
                             <a href="#"><i class="fa fa-fw fa-gear"></i> Settings</a>
@@ -252,35 +252,45 @@
             </ul>
             <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
             <div class="collapse navbar-collapse navbar-ex1-collapse">
-                <ul class="nav navbar-nav side-nav">
+              <ul class="nav navbar-nav side-nav">
                     <li class="active">
-                        <a href="javascript:;" data-toggle="collapse" data-target="#demo"></i> Jadwal Sidang <i class="fa fa-fw fa-caret-down"></i></a>
-                        
-						<ul id="demo" class="collapse">
-                            <li  class="active">
-                                <a href="Jadwal1.html">Sidang Keseluruhan</a>
+                        <a href="Jadwal1.html"></i>Final Project Schedule</i></a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" data-toggle="collapse" data-target="#student-registration"></i> Student Registration <i class="fa fa-fw fa-caret-down"></i></a>
+                        <ul id="student-registration" class="collapse">
+                            <li>
+                                <a href="indexmahasiswadaftar.html">Add Student</a>
                             </li>
                             <li>
-                                <a href="Jadwal2.html">Sidang Saya</a>
-                            </li>
-                            <li>
-                                <a href="Jadwal3.html">Sidang Bimbingan</a>
-                            </li>
-                            <li>
-                                <a href="Jadwal4.html">Sidang Pengujian</a>
+                                <a href="indexmahasiswaform.html">View Students</a>
                             </li>
                         </ul>
                     </li>
-                     <li>
-                        <a href="inputschedulecalendar.html"></i> Input Jadwal</a>
-                    </li>
                     
                     <li>
-                        <a href="ganti_dosen_uji.html"></i> Penggantian Dosen Penguji</a>
+                        <a href="javascript:;" data-toggle="collapse" data-target="#available-schedule"></i> Available Schedule <i class="fa fa-fw fa-caret-down"></i></a>
+                        <ul id="available-schedule" class="collapse">
+                            <li>
+                                <a href="inputschedulecalendar.html">Input Your Schedule</a>
+                            </li>
+                            <li>
+                                <a href="inputscheduleview.html">View Your Schedule</a>
+                            </li>
+                        </ul>
                     </li>
+                    <li>
+                        <a href="ubah1.html"></i> Schedule Setting</a>
+                    </li>
+                    <!-- <li>
+                        <a href="inputschedulecalendar.html"></i> Input Your Schedule</a>
+                    </li> -->
                     
-					<li>
-                        <a href="ubah1.html"></i> Penggantian Jadwal</a>
+                   <!--  <li>
+                        <a href="ubah_ruang.html"></i> Change Exam's Room</a>
+                    </li> -->
+                    <li>
+                        <a href="ganti_dosen_uji.html"></i> Change Examiner</a>
                     </li>
                 </ul>
             </div>
@@ -295,13 +305,33 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <h1 class="page-header" style="text-align:center">
-                            Jadwal Sidang Tugas Akhir
+                            Final Project Schedule
                         </h1>
                     </div>
                 </div>
                 <!-- /.row -->
 
                 <div class="row">
+                    <!--<form name="jump">
+                        <select onchange="location = this.options[this.selectedIndex].value;">
+                            <option value="Jadwal1.html">All Schedule</option>
+                            <option value="Jadwal2.html">MySchedule</option>
+                            <option value="Jadwal3.html">Schedule as Supervisor</option>
+                            <option value="Jadwal3.html">Schedule as Examiner</option>
+                        </select>​
+                    </form>-->
+                    <div style="margin-left:380px" class="dropdown">
+                        <span style="font-size:17px">Filter:  </span>
+                        <button style="width:210px"class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">All Schedule     
+                        <span style="margin-left:78px" class="caret"></span></button>
+                        <ul class="dropdown-menu">
+                          <li><a href="Jadwal1.html">All Schedule</a></li>
+                          <li><a href="Jadwal2.html">My Schedule</a></li>
+                          <li><a href="Jadwal3.html">My Schedule as Supervisor</a></li>
+                          <li><a href="Jadwal4.html">My Schedule as Examiner</a></li>
+                        </ul>
+                      </div>
+                      <br>
                     <div id='calendar'></div>
                     <a style="text-decoration:none; color:grey;" href="">Print <img src="../images/print.png" width="24" height="24"></a>
                     <a style="text-decoration:none; color:grey;" href="">Save as<img src="../images/pdf.png" width="24" height="24"></a>
